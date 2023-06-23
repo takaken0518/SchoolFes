@@ -1,12 +1,15 @@
 import './App.css';
-import './radiobutton'
+import RadioButton from './RadioButton';
 
 function YMG() {
-  return (
-    <div className="YMG">
 
+  return (
+    <div>
+      <RadioButton/>
     </div>
   );
+
+
 }
 
 export default YMG;
