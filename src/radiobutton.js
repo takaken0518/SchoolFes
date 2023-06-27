@@ -9,6 +9,11 @@ const RadioButton = () => {
   return (
     <div>
 
+      <img src="/images/Cook.jpg" />
+      <p>
+
+      </p>
+
       <label>
         <input
           type="radio"
@@ -19,6 +24,10 @@ const RadioButton = () => {
         コック池崎
       </label>
 
+      <img src="/images/Cook.jpg" />
+      <p>
+
+      </p>
 
       <label>
         <input
@@ -31,11 +40,20 @@ const RadioButton = () => {
       </label>
 
       <p>選択値：{val}</p>
-      <form attribute >
-      <input type="submit" value="投票する！！"></input>
+
+      {/*画面遷移するなら遷移先を設定する*/}
+      <form action = 'done!' >
+        <image></image>
+
+      <button onClick={Counter}>投票する!!</button>
+
+      {/*<input type="submit" value="投票する！！"></input>*/}
+
+      {/*Counterコンポーネントに投票結果を送信する*/}
+      <Counter value = {val}/>
       </form>
 
-      <Counter/>
+
 
     </div>
 
