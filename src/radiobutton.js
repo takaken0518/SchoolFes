@@ -1,5 +1,6 @@
 import React from 'react';
-import Counter from './Counter';
+import imagesAnime from './imagesAnime.css'
+import VoteCounter from './VoteCounter';
 
 const RadioButton = () => {
   const [val,setVal] =React.useState();
@@ -9,9 +10,10 @@ const RadioButton = () => {
   return (
     <div>
 
-      <img src="logo192.png" />
-      <p>
+      <img src="images/Cook.png" class="Votebutton" onclick = {VoteCounter('cook')} />
+      <img src="/images/Yummy.png" class="Votebutton" onclick = {VoteCounter('yammy')}/>
 
+      <p>
       </p>
 
       <label>
@@ -24,10 +26,7 @@ const RadioButton = () => {
         コック池崎
       </label>
 
-      <img src="/images/Cook.jpg" />
-      <p>
 
-      </p>
 
       <label>
         <input
@@ -45,14 +44,15 @@ const RadioButton = () => {
       <form action = 'done!' >
         <image></image>
 
-      <button onClick={Counter}>投票する!!</button>
+      <button onClick={VoteCounter}>投票する!!</button>
 
       {/*<input type="submit" value="投票する！！"></input>*/}
 
       {/*Counterコンポーネントに投票結果を送信する*/}
-      <Counter value = {val}/>
       </form>
 
+      cook:<p></p>
+      yammy:
 
 
     </div>
