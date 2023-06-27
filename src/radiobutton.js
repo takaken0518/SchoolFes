@@ -9,7 +9,7 @@ const RadioButton = () => {
   return (
     <div>
 
-      <img src="/images/Cook.jpg" />
+      <img src="logo192.png" />
       <p>
 
       </p>
