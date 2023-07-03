@@ -1,7 +1,29 @@
-/*画像サイズの指定*/
+.container {
+	display: flex;
+}
+
+/*コックイケザキの表示位置指定*/
+img.Cook{
+	position: relative;
+	top:120px;
+
+}
+
+/*ヤミー山亀の表示位置指定*/
+img.Yummy{
+	position: relative;
+
+	top:120px;
+	left:50%;
+
+}
+
+/*画像サイズ指定*/
 img.Votebutton{
-width: 10%;
-height: 10%;
+
+	width:10%;
+	height:auto;
+	margin:auto;
 
 }
 
@@ -23,6 +45,36 @@ img.Votebutton:active{
  
 	/* 今いる位置から相対的に3px下に配置する。*/
 	position: relative;
-	top: 3px;
+	top: 123px;
  
 }
+
+/* 画像を選択した際に動くやつ */
+
+/* 赤枠アニメーション */
+.Votebutton {
+	border: none;
+	padding: 0;
+	margin: 10px;
+	cursor: pointer;
+	opacity: 0.8;
+	transition: opacity 0.3s ease;
+  }
+  
+  .Votebutton:hover {
+	opacity: 1;
+  }
+  
+  .selected {
+	border: 2px solid red;
+	animation: fadeInBorder 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInBorder {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }

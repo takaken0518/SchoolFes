@@ -1,12 +1,14 @@
 import './App.css';
-import RadioButton from './RadioButton';
+import Header from './Header';
+import VoteSystem from './VoteSystem';
 
 function YMG() {
 
   return (
     <div>
-      <RadioButton/>
-      
+      <Header/>
+      <VoteSystem/>
+
 
     </div>
   );
