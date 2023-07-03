@@ -1,0 +1,11 @@
+header {
+    background-color: #333;
+    color: #fff;
+    height: 50px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: slideAndFade 1s ease;
+  }
