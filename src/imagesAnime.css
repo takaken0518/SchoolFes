@@ -1,3 +1,11 @@
+:root{
+	--images_width:10%;
+	--images_height:100%;
+	--Votebutton_top:120px;
+
+}
+
+
 .container {
 	display: flex;
 }
@@ -5,7 +13,7 @@
 /*コックイケザキの表示位置指定*/
 img.Cook{
 	position: relative;
-	top:120px;
+	top:var(--Votebutton_top);
 
 }
 
@@ -13,20 +21,19 @@ img.Cook{
 img.Yummy{
 	position: relative;
 
-	top:120px;
+	top:var(--Votebutton_top);
 	left:50%;
 
 }
 
 /*画像サイズ指定*/
-img.Votebutton{
+.vote-image{
 
-	width:10%;
+	width:var(--images_width);
 	height:auto;
 	margin:auto;
 
 }
-
 
 /* 画像をホバーした */
 img.Votebutton:hover{
@@ -53,6 +60,8 @@ img.Votebutton:active{
 
 /* 赤枠アニメーション */
 .Votebutton {
+	position: relative;
+	display: inline-block;
 	border: none;
 	padding: 0;
 	margin: 10px;
@@ -61,13 +70,21 @@ img.Votebutton:active{
 	transition: opacity 0.3s ease;
   }
   
+/*
   .Votebutton:hover {
 	opacity: 1;
   }
   
-  .selected {
+  .frame-animation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: var(--images_width);
+	height: var(--images_height);
 	border: 2px solid red;
+	opacity: 0;
 	animation: fadeInBorder 0.5s ease-in-out forwards;
+	box-sizing: border-box;
   }
   
   @keyframes fadeInBorder {
@@ -78,3 +95,118 @@ img.Votebutton:active{
 	  opacity: 1;
 	}
   }
+*/
+
+/*--------枠線のアニメーション-----------------------------------------------------*/
+.Votebutton{
+    display: flex;
+    flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
+    margin:0 0 50px 0;
+    list-style: none;
+}
+
+.Votebutton a{
+    display: block;
+    padding:10px 30px;
+    text-decoration: none;
+    color: #333;
+}
+
+/*==================================================
+　5-3-10 線が伸びて枠線になる
+===================================*/
+
+.Votebutton{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+    margin:0 10px;
+}
+
+/*線の基点位置*/
+.Votebutton::before,
+.Votebutton::after{
+    content:"";
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    background:#0481A2;
+    /*線の形状*/
+    width: 0;
+    height:2px;
+    /*アニメーションの指定*/
+    transition: all 0.2s linear;
+}
+
+.Votebutton::before{
+  right: 0;
+  bottom: 0;
+}
+
+.Votebutton::after{
+  left: 0;
+  top: 0;
+}
+
+/*線の基点位置2 spanタグ*/
+
+.Votebutton {
+    display: block;
+}
+
+.Votebutton ::before,
+.Votebutton ::after{
+  content:"";
+    /*絶対配置で線の位置を決める*/
+  position: absolute;
+  background: #0481A2;
+    /*線の形状*/
+  width:var(--images_width);
+  height:var(--images_);
+/*アニメーションの指定*/
+  transition: all 0.1s linear;
+}
+
+.Votebutton ::before{
+  left: 0;
+  bottom: 0;
+}
+
+.Votebutton ::after{
+  right: 0;
+  top: 0;
+}
+
+/*現在地とhoverした際の線の変化*/
+.Votebutton.current::before,
+.Votebutton.current::after,
+.Votebutton:hover::before,
+.Votebutton:hover::after{
+  width: 100%;
+}
+
+.Votebutton:hover::after{
+  transition-delay: 0s;/*すぐ線を出現させる*/
+}
+
+.Votebutton:hover::before{
+  transition-delay: 0.3s;/*線の出現を0.3秒遅らせる*/
+}
+
+.Votebutton.current span::before,
+.Votebutton.current span::after,
+.Votebutton:hover span::before,
+.Votebutton:hover span::after{
+  height: 100%;
+}
+
+.Votebutton:hover span::before{
+  transition-delay: 0.5s;/*線の出現を0.5秒遅らせる*/
+}
+
+.Votebutton:hover span::after{
+  transition-delay: 0.2s;/*線の出現を0.2秒遅らせる*/
+}
+/*========= レイアウトのためのCSS ===============*/
+
+.lead{
+  padding: 50px 20px;
+}

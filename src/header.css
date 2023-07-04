@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+
 header {
-    background-color: #333;
+    background-color: #333333e5;
     color: #fff;
     height: 50px;
     padding: 20px;
@@ -8,4 +10,11 @@ header {
     left: 0;
     width: 100%;
     animation: slideAndFade 1s ease;
+  }
+
+  /*ヘッダーのフォントと文字の表示場所を指定*/
+  h1{
+    font-family: 'Cherry Swash', cursive;
+    position:relative;
+    top: -15px;
   }
