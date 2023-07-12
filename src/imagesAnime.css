@@ -2,6 +2,8 @@
 	--images_width:10%;
 	--images_height:100%;
 	--Votebutton_top:120px;
+  --Cook_top:120px;
+  --Yummy_top:200px;
 
 }
 
@@ -13,7 +15,7 @@
 /*コックイケザキの表示位置指定*/
 img.Cook{
 	position: relative;
-	top:var(--Votebutton_top);
+	top:var(--Cook_top);
 
 }
 
@@ -21,7 +23,7 @@ img.Cook{
 img.Yummy{
 	position: relative;
 
-	top:var(--Votebutton_top);
+	top:var(--Yummy_top);
 	left:50%;
 
 }
@@ -34,6 +36,161 @@ img.Yummy{
 	margin:auto;
 
 }
+
+
+/*ボックスサイズ算出をborer-boxに */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+button.VoteComplete {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+/*投票ボタンデザイン*/
+
+button.VoteComplete {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #c8ff00;
+  border-radius: 0;
+  background: #000;
+}
+
+button.VoteComplete span {
+  position: relative;
+  z-index: 1;
+}
+
+button.VoteComplete:before {
+  position: absolute;
+  top: 0;
+  left: calc(-150% + 50px);
+
+  width: 150%;
+  height: 500%;
+
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+  transform: rotate(45deg) translateX(0) translateY(0);
+
+  background: #A0C49D;
+}
+
+button.VoteComplete:after {
+  position: absolute;
+  top: -400%;
+  right: calc(-150% + 50px);
+
+  width: 150%;
+  height: 500%;
+
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+  transform: rotate(45deg) translateX(0) translateY(0);
+
+  background: #E1ECC8;
+}
+
+button.VoteComplete:hover:before {
+  -webkit-transform: rotate(45deg) translateX(0) translateY(-50%);
+  transform: rotate(45deg) translateX(0) translateY(-50%);
+}
+
+button.VoteComplete:hover:after {
+  -webkit-transform: rotate(45deg) translateX(0) translateY(50%);
+  transform: rotate(45deg) translateX(0) translateY(50%);
+}
+
+
+/*投票する!!ボタンの表示位置調整とテキストのデザイン*/
+.VoteComplete{
+  position: relative;
+  top:40px;
+  font-family:'Cherry Swash', cursive;
+  /*border: 2px solid rgb(128, 0, 255);*/
+}
+
+/*投票するボタンデザイン*/
+/*
+.VoteComplete{
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  background: #000;
+  padding: 7px 13px 7px 33px;
+}
+*/
+
+/*右向きの矢印描画*/
+/*
+.VoteComplete::before {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin: auto;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+*/
+
+/*投票する!!ボタンホバー*/
+/*
+.VoteComplete:hover{
+  position: relative;
+  top:42px;
+  opacity:0.8;
+}
+*/
+
+/*投票する!!ボタンクリック*/
+
+.VoteComplete:active{
+  position: relative;
+  top:47px;
+  
+
+}
+
+
 
 /* 画像をホバーした */
 img.Votebutton:hover{
@@ -52,7 +209,7 @@ img.Votebutton:active{
  
 	/* 今いる位置から相対的に3px下に配置する。*/
 	position: relative;
-	top: 123px;
+	top: 3px;
  
 }
 
@@ -98,7 +255,7 @@ img.Votebutton:active{
 */
 
 /*--------枠線のアニメーション-----------------------------------------------------*/
-.Votebutton{
+.Votebutto{
     display: flex;
     flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
     margin:0 0 50px 0;

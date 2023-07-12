@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import imagesAnime from './imagesAnime.css'
-import main from './main.css'
 
 function VoteSystem() {
     const [votes, setVotes] = useState({ image1: 0, image2: 0 });
@@ -30,26 +29,34 @@ function VoteSystem() {
 
         <div>
           <div
-            className={`Votebutton ${selectedImage === 'image1' ? 'selected' : ''}`}
+            className={`Votebutton Cook ${selectedImage === 'image1' ? 'selected' : ''}`}
             onClick={() => handleImageSelect('image1')}
           >
             <img src="images/Cook.png" alt="Image 1" className="vote-image" />
             {selectedImage === 'image1' && <div className="frame-animation"></div>}
           </div>
-          <span>池崎投票数: {votes.image1}</span>
+          {console.log("イケザキ投票数" + votes.image1)}
         </div>
         <div>
           <div
-            className={`Votebutton ${selectedImage === 'image2' ? 'selected' : ''}`}
+            className={`Votebutton Yummy ${selectedImage === 'image2' ? 'selected' : ''}`}
             onClick={() => handleImageSelect('image2')}
           >
             <img src="images/Yummy.png" alt="Image 2" className="vote-image" />
             {selectedImage === 'image2' && <div className="frame-animation"></div>}
           </div>
-          <span>山亀投票数: {votes.image2}</span>
+
+          {console.log("Yummy投票数" + votes.image2)}
+
         </div>
-        <button onClick={handleVote} disabled={!selectedImage || hasVoted}>
-          投票する!!
+
+
+        <button class="VoteComplete" onClick={handleVote} disabled={!selectedImage || hasVoted}>
+
+        <span>
+        投票する!!
+        </span>
+
         </button>
       </div>
     );
