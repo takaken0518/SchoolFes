@@ -6,8 +6,8 @@
 .hamburger {
   position: relative;
   /*ハンバーガーメニューの表示位置*/
-  top: -220px;
-  left: -5px;
+  top: -40px;
+  left: 340px;
 
   width: 30px;
   height: 20px;
