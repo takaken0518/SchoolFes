@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import imagesAnime from './imagesAnime.css'
+import  './imagesAnime.css'
+
 
 function VoteSystem() {
     const [votes, setVotes] = useState({ image1: 0, image2: 0 });
@@ -25,14 +26,12 @@ function VoteSystem() {
     return (
       <div>
 
-
-
         <div>
           <div
             className={`Votebutton Cook ${selectedImage === 'image1' ? 'selected' : ''}`}
             onClick={() => handleImageSelect('image1')}
           >
-            <img src="images/Cook.png" alt="Image 1" className="vote-image" />
+            <img src="images/Cook.png" alt="Image 1" className="vote-image Cook" />
             {selectedImage === 'image1' && <div className="frame-animation"></div>}
           </div>
           {console.log("イケザキ投票数" + votes.image1)}
@@ -42,7 +41,7 @@ function VoteSystem() {
             className={`Votebutton Yummy ${selectedImage === 'image2' ? 'selected' : ''}`}
             onClick={() => handleImageSelect('image2')}
           >
-            <img src="images/Yummy.png" alt="Image 2" className="vote-image" />
+            <img src="images/Yummy.png" alt="Image 2" className="vote-image Yummy" />
             {selectedImage === 'image2' && <div className="frame-animation"></div>}
           </div>
 

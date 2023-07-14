@@ -1,5 +1,8 @@
 import React from 'react'
-import header from './header.css';
+
+import HamburgerMenu from './HamburgerMenu';
+
+import './header.css';
 import Animetion from './Animetion.css';
 
 const Header = () => {
@@ -12,6 +15,8 @@ const Header = () => {
       <font color="eddc8e">Storonomia</font>
 
     </h1>
+    <HamburgerMenu/>
+
     </header>
 
     </div>

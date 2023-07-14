@@ -1,21 +1,19 @@
 :root{
-	--images_width:10%;
+	--images_width:25%;
 	--images_height:100%;
-	--Votebutton_top:120px;
-  --Cook_top:120px;
-  --Yummy_top:200px;
+	--Votebutton_top:12px;
+  --Cook_top:80px;
+  --Yummy_top:-58px;
 
 }
 
-
-.container {
-	display: flex;
-}
 
 /*コックイケザキの表示位置指定*/
 img.Cook{
 	position: relative;
+
 	top:var(--Cook_top);
+  left: 100px;
 
 }
 
@@ -24,7 +22,7 @@ img.Yummy{
 	position: relative;
 
 	top:var(--Yummy_top);
-	left:50%;
+	left:230px;
 
 }
 
@@ -36,6 +34,7 @@ img.Yummy{
 	margin:auto;
 
 }
+
 
 
 /*ボックスサイズ算出をborer-boxに */
@@ -255,7 +254,7 @@ img.Votebutton:active{
 */
 
 /*--------枠線のアニメーション-----------------------------------------------------*/
-.Votebutto{
+.Votebutton{
     display: flex;
     flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
     margin:0 0 50px 0;

@@ -182,9 +182,9 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #af3ff9;
+    background-color: #3ff977;
   }
-  
+
   .pulse-bubble-1 {
       animation: pulse .4s ease 0s infinite alternate;
   }

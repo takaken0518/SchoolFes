@@ -4,13 +4,19 @@ header {
     background-color: #3d3d3d55;
     color: #fff;
     height: 50px;
-    padding: 20px;
-    position: fixed;
+    width: 426px;
+    padding: 30px;
+    position:relative;
     top: 0;
     left: 0;
-    width: 100%;
     animation: slideAndFade 1s ease;
   }
+
+  .container {
+    display: flex;
+  
+  }
+
 
   /*ヘッダーのフォントと文字の表示場所を指定*/
   h1{

@@ -1,0 +1,102 @@
+.hamburger-menu {
+  position: relative;
+  height: 20px;
+}
+
+.hamburger {
+  position: relative;
+  /*ハンバーガーメニューの表示位置*/
+  top: -220px;
+  left: -5px;
+
+  width: 30px;
+  height: 20px;
+
+  cursor: pointer;
+  z-index: 1;
+
+}
+
+.hamburger:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 130%;
+  background-color: #ff008c79;
+}
+
+.hamburger:active:before {
+  background-color: #8de95579;
+}
+
+.hamburger span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+  transform-origin: top left;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+  transform-origin: bottom left;
+}
+
+.open .hamburger span:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .hamburger span:nth-child(3) {
+  transform: translateY(6px) rotate(-45deg);
+}
+
+.menu {
+  /* 内部のメニューの表示設定 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.open .menu {
+  opacity: 1;
+  z-index: 1;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.menu li {
+  padding: 10px 0;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
