@@ -1,0 +1,134 @@
+/*　モーダルウィンドウの中身 */
+#content {
+    z-index: 2;
+    width: 70%;
+    height: 70%;
+    padding: 1em;
+    background: #fff;
+  }
+
+button.closebutton{
+
+    float:right;
+    background: #fc0909;
+    
+    height:30px;
+    width:30px;
+}
+
+/* イケサキのモーダルウィンドウ画像サイズ */
+img.cook_pasta{
+    
+    height: 50%;
+    width:50%;
+}
+
+/* ヤミーのモーダルウィンドウ画像サイズ */
+img.yummy_pasta{
+    
+    height: 50%;
+    width:50%;
+}
+
+
+/* 投票ボタンのサイズとか */
+button.VoteComplete {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+  }
+  
+  /*投票ボタンデザイン*/
+  
+  button.VoteComplete {
+    overflow: hidden;
+  
+    padding: 1.5rem 6rem;
+  
+    color: #c8ff00;
+    border-radius: 0;
+    background: #000;
+  }
+  
+  button.VoteComplete span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  button.VoteComplete:before {
+    position: absolute;
+    top: 0;
+    left: calc(-150% + 50px);
+  
+    width: 150%;
+    height: 500%;
+  
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+  
+    background: #A0C49D;
+  }
+  
+  button.VoteComplete:after {
+    position: absolute;
+    top: -400%;
+    right: calc(-150% + 50px);
+  
+    width: 150%;
+    height: 500%;
+  
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+  
+    background: #E1ECC8;
+  }
+  
+  button.VoteComplete:hover:before {
+    -webkit-transform: rotate(45deg) translateX(0) translateY(-50%);
+    transform: rotate(45deg) translateX(0) translateY(-50%);
+  }
+  
+  button.VoteComplete:hover:after {
+    -webkit-transform: rotate(45deg) translateX(0) translateY(50%);
+    transform: rotate(45deg) translateX(0) translateY(50%);
+  }
+  
+  
+  /*投票する!!ボタンの表示位置調整とテキストのデザイン*/
+  .VoteComplete{
+    position: relative;
+    top:40px;
+    font-family:'Cherry Swash', cursive;
+    /*border: 2px solid rgb(128, 0, 255);*/
+  }
+
+  /*投票する!!ボタンクリック*/
+
+.VoteComplete:active{
+    position: relative;
+    top:47px;
+    
+  
+  }
