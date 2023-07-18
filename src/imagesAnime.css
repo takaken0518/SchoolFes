@@ -7,6 +7,18 @@
 
 }
 
+
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.lead{
+  padding: 50px 20px;
+}
+
 /*モーダルウィンドウ用の半透明のやつ*/
 #overlay{
 /*　画面全体を覆う設定　*/
@@ -24,15 +36,12 @@
 
 }
 
-
-
-
 /*コックイケザキの表示位置指定*/
 img.Cook{
 	position: relative;
 
 	top:var(--Cook_top);
-  left: 100px;
+  left: 50px;
 
 }
 
@@ -41,7 +50,7 @@ img.Yummy{
 	position: relative;
 
 	top:var(--Yummy_top);
-	left:170px;
+	left:130px;
 
 }
 
@@ -54,233 +63,17 @@ img.Yummy{
 
 }
 
+/* 案内用テキストレイアウト */
+p.Vote_info{
 
-
-/*ボックスサイズ算出をborer-boxに */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 62.5%;/*rem算出をしやすくするために*/
-}
-
-
-
-/*投票するボタンデザイン*/
-/*
-.VoteComplete{
   position: relative;
-  color: #fff;
-  font-weight: bold;
-  background: #000;
-  padding: 7px 13px 7px 33px;
-}
-*/
-
-/*右向きの矢印描画*/
-/*
-.VoteComplete::before {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  content: '';
-  width: 8px;
-  height: 8px;
-  margin: auto;
-  border-top: 3px solid #fff;
-  border-right: 3px solid #fff;
-  -webkit-transform: translateY(-50%) rotate(45deg);
-  transform: translateY(-50%) rotate(45deg);
-}
-*/
-
-/*投票する!!ボタンホバー*/
-/*
-.VoteComplete:hover{
-  position: relative;
-  top:42px;
-  opacity:0.8;
-}
-*/
-
-/* 画像をホバーした */
-img.Votebutton:hover{
- 
-	/* 透明度を上げることで、画像の色を薄く見せる。*/
-	opacity:0.5;
- 
-	/* リンクをホバーしたときのカーソルにする。*/
-	cursor: pointer;
-}
- 
-/* 画像をクリックした瞬間 */
-img.Votebutton:active{
- 
-	/* 要素を若干下に下げることで、押した感じを出す。*/
- 
-	/* 今いる位置から相対的に3px下に配置する。*/
-	position: relative;
-	top: 3px;
- 
-}
-
-/* 画像を選択した際に動くやつ */
-
-/* 赤枠アニメーション */
-.Votebutton {
-	position: relative;
-	display: inline-block;
-	border: none;
-	padding: 0;
-	margin: 10px;
-	cursor: pointer;
-	opacity: 0.8;
-	transition: opacity 0.3s ease;
-  }
+  top:110px;
   
-/*
-  .Votebutton:hover {
-	opacity: 1;
-  }
-  
-  .frame-animation {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: var(--images_width);
-	height: var(--images_height);
-	border: 2px solid red;
-	opacity: 0;
-	animation: fadeInBorder 0.5s ease-in-out forwards;
-	box-sizing: border-box;
-  }
-  
-  @keyframes fadeInBorder {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
-  }
-*/
 
-/*--------枠線のアニメーション-----------------------------------------------------*/
-.Votebutton{
-    display: flex;
-    flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
-    margin:0 0 50px 0;
-    list-style: none;
-}
+  color: azure;
+  font-size:medium;
 
-.Votebutton a{
-    display: block;
-    padding:10px 30px;
-    text-decoration: none;
-    color: #333;
-}
-
-/*==================================================
-　5-3-10 線が伸びて枠線になる
-===================================*/
-
-.Votebutton{
-    /*線の基点とするためrelativeを指定*/
-  position: relative;
-    margin:0 10px;
-}
-
-/*線の基点位置*/
-.Votebutton::before,
-.Votebutton::after{
-    content:"";
-    /*絶対配置で線の位置を決める*/
-    position: absolute;
-    background:#0481A2;
-    /*線の形状*/
-    width: 0;
-    height:2px;
-    /*アニメーションの指定*/
-    transition: all 0.2s linear;
-}
-
-.Votebutton::before{
-  right: 0;
-  bottom: 0;
-}
-
-.Votebutton::after{
-  left: 0;
-  top: 0;
-}
-
-/*線の基点位置2 spanタグ*/
-
-.Votebutton {
-    display: block;
-}
-
-.Votebutton ::before,
-.Votebutton ::after{
-  content:"";
-    /*絶対配置で線の位置を決める*/
-  position: absolute;
-  background: #0481A2;
-    /*線の形状*/
-  width:var(--images_width);
-  height:var(--images_);
-/*アニメーションの指定*/
-  transition: all 0.1s linear;
-}
-
-.Votebutton ::before{
-  left: 0;
-  bottom: 0;
-}
-
-.Votebutton ::after{
-  right: 0;
-  top: 0;
-}
-
-/*現在地とhoverした際の線の変化*/
-.Votebutton.current::before,
-.Votebutton.current::after,
-.Votebutton:hover::before,
-.Votebutton:hover::after{
-  width: 100%;
-}
-
-.Votebutton:hover::after{
-  transition-delay: 0s;/*すぐ線を出現させる*/
-}
-
-.Votebutton:hover::before{
-  transition-delay: 0.3s;/*線の出現を0.3秒遅らせる*/
-}
-
-.Votebutton.current span::before,
-.Votebutton.current span::after,
-.Votebutton:hover span::before,
-.Votebutton:hover span::after{
-  height: 100%;
-}
-
-.Votebutton:hover span::before{
-  transition-delay: 0.5s;/*線の出現を0.5秒遅らせる*/
-}
-
-.Votebutton:hover span::after{
-  transition-delay: 0.2s;/*線の出現を0.2秒遅らせる*/
-}
-/*========= レイアウトのためのCSS ===============*/
-
-.lead{
-  padding: 50px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15em;
 }

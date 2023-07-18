@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './imagesAnime.css';
 import ModalWindow from './ModalWindow';
 
 function VoteSystem() {
-  const [votes, setVotes] = useState({ image1: 0, image2: 0 });
+  const initialVotes = { image1: 0, image2: 0 };
+  const [votes, setVotes] = useState(() => {
+    const storedVotes = localStorage.getItem('votes');
+    return storedVotes ? JSON.parse(storedVotes) : initialVotes;
+  });
   const [selectedImage, setSelectedImage] = useState(null);
-  const [hasVoted, setHasVoted] = useState(false);
+  const [hasVoted, setHasVoted] = useState(() => {
+    const storedHasVoted = localStorage.getItem('hasVoted');
+    return storedHasVoted ? JSON.parse(storedHasVoted) : false;
+  });
   const [showModal, setShowModal] = useState(false);
 
   const handleVote = () => {
@@ -30,6 +37,14 @@ function VoteSystem() {
     setShowModal(false);
   };
 
+  useEffect(() => {
+    localStorage.setItem('votes', JSON.stringify(votes));
+  }, [votes]);
+
+  useEffect(() => {
+    localStorage.setItem('hasVoted', JSON.stringify(hasVoted));
+  }, [hasVoted]);
+
   return (
     <div>
       <img
@@ -52,13 +67,13 @@ function VoteSystem() {
 
       {showModal && (
         <ModalWindow
-        selectedImage={selectedImage}
-        votes={votes}
-        handleVote={handleVote}
-        handleCloseModal={handleCloseModal}
-          />
+          selectedImage={selectedImage}
+          votes={votes}
+          handleVote={handleVote}
+          handleCloseModal={handleCloseModal}
+        />
       )}
-
+      <p className="Vote_info">投票したい方の画像をタップ！！</p>
     </div>
   );
 }

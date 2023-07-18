@@ -55,9 +55,8 @@ function MenuScreen(){
 }
 
 function YMG() {
-
   const [showSplash, setShowSplash] = useState(true);
-  //スプラッシュスクリーンの表示設定 時間はms
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
@@ -66,25 +65,17 @@ function YMG() {
     return () => clearTimeout(timer);
   }, []);
 
-  return(
+  // ルーティングの定義
+  return (
     <Router>
       <Routes>
-        {showSplash ? (
-          <Route path="/" element={<SplashScreen />} />
-        ) : (
-          <>
-            <Route path="/" element={<Navigate to="/top" />} />
-            <Route path="/top" element={<TopScreen />} />
-            <Route path="/menu" element={<MenuScreen />} />
-            <Route path="/vote" element={<VoteScreen />} />
-          </>
-        )}
+        <Route path="/" element={showSplash ? <SplashScreen /> : <Navigate to="/top" />} />
+        <Route path="/top" element={<TopScreen />} />
+        <Route path="/menu" element={<MenuScreen />} />
+        <Route path="/vote" element={<VoteScreen />} />
       </Routes>
     </Router>
-
-
-  )
-
+  );
 }
 
 export default YMG;
