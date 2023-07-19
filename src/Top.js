@@ -1,4 +1,5 @@
 import React from 'react'
+import './modal.css'
 import './imagesAnime.css';
 
 const Top = () => {

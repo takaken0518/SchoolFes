@@ -46,7 +46,7 @@ function VoteSystem() {
   }, [hasVoted]);
 
   return (
-    <div>
+    <div className="votesystem-container">
       <img
         src="images/Cook.png"
         alt="Image 1"
