@@ -1,23 +1,14 @@
 import React, { useState } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import './HamburgerMenu.css';
-import Top from './Top'
-import VoteSystem from './VoteSystem';
-import Menu from './Menu';
+
 
 function HamburgerMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activePage, setActivePage] = useState('Page1'); // デフォルトの表示ページを設定
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    if (!isMenuOpen) {
-      setActivePage('Page1'); // メニューが閉じられた場合にactivePageをリセット
-    }
-  };
-
-  const handleMenuClick = (page) => {
-    setActivePage(page);
-    setIsMenuOpen(false); // メニュー項目がクリックされたらメニューを閉じる
   };
 
   return (
@@ -30,24 +21,21 @@ function HamburgerMenu() {
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
           <li>
-            <button onClick={() => handleMenuClick('Page1')}>top</button>
+            <Link to="/">top</Link>
           </li>
           <li>
-            <button onClick={() => handleMenuClick('Page2')}>投票</button>
+            <Link to="/vote">投票</Link>
           </li>
           <li>
-            <button onClick={() => handleMenuClick('Page3')}>Menu</button>
+            <Link to="/menu">Menu</Link>
           </li>
         </ul>
       </div>
       <div className="content">
-        {activePage === 'Page1' && <Top />}
-        {activePage === 'Page2' && <div className="votesystem-container"><VoteSystem /></div>}
-        {activePage === 'Page3' && <Menu />}
+        <Outlet />
       </div>
     </div>
   );
 }
-
 
 export default HamburgerMenu;

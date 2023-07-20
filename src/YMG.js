@@ -3,7 +3,10 @@ import Header from './Header';
 import Splash from './Splash';
 import Splash_text from './Splash_text';
 import VoteSystem from './VoteSystem';
+
 import Top from './Top';
+
+
 import Menu from './Menu';
 
 import React, { useEffect, useState } from 'react';
@@ -39,6 +42,7 @@ function TopScreen(){
     <div>
       <Header/>
       <Top/>
+
     </div>
   );
 

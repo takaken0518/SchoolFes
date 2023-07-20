@@ -13,8 +13,8 @@ function Menu() {
   };
 
   return (
-    <div className='Menu-container'>
-      
+    <div>
+      <img className='img-container' src='images/menu.jpg'></img>
       {selectedImage && (
         <ModalMenu selectedImage={selectedImage} closeModal={() => setShowModal(false)} />
       )}

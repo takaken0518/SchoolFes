@@ -1,11 +1,12 @@
 import React from 'react'
+import './top.css'
 import './modal.css'
-import './imagesAnime.css';
+import './imagesAnime.css'
 
 const Top = () => {
   return (
     <div>
-    <img src=''></img>
+    <img className='map' src='images/map.jpg'></img>
 
     </div>
   )

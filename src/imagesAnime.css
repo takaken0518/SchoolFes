@@ -61,6 +61,8 @@ img.Yummy{
 	height:auto;
 	margin:auto;
 
+  z-index: -50;
+
 }
 
 /* 案内用テキストレイアウト */

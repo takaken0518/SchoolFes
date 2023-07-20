@@ -18,7 +18,7 @@ const ModalWindow = ({ selectedImage, votes, handleVote, handleCloseModal }) => 
               <button className='closebutton' onClick={handleCloseModal}>close</button>
             </p>
             <p><img src='images/Cook.png' className='cook_pasta'></img></p>
-            <p>Votes: {votes[selectedImage]}</p>
+
             <button className='VoteComplete' onClick={handleVoteButtonClick}>Vote</button>
   
           </div>
