@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './HamburgerMenu.css';
 import Top from './Top'
 import VoteSystem from './VoteSystem';
+import Menu from './Menu';
 
 function HamburgerMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,6 +43,7 @@ function HamburgerMenu() {
       <div className="content">
         {activePage === 'Page1' && <Top />}
         {activePage === 'Page2' && <div className="votesystem-container"><VoteSystem /></div>}
+        {activePage === 'Page3' && <Menu />}
       </div>
     </div>
   );

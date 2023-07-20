@@ -1,0 +1,11 @@
+/*　メニューの背景を設定 */
+div.Menu-container {
+    background-image: url('menu.jpg'); /* 画像のパスを指定 */
+    background-size: cover; /* 画像を要素に合わせてカバーするように調整 */
+  }
+
+img.menu1{
+    width: 50%;
+    height:auto;
+
+}

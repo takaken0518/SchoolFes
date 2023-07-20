@@ -4,6 +4,7 @@ import Splash from './Splash';
 import Splash_text from './Splash_text';
 import VoteSystem from './VoteSystem';
 import Top from './Top';
+import Menu from './Menu';
 
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
@@ -49,6 +50,7 @@ function MenuScreen(){
     return (
       <div>
         <Header/>
+        <Menu/>
       </div>
     );
 
