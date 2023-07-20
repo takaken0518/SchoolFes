@@ -1,5 +1,5 @@
 /*　モーダルウィンドウの中身 */
-#content {
+/*#content {
     z-index: 2;
     width: 70%;
     height: 70%;
@@ -10,32 +10,31 @@
 button.closebutton{
 
     float:right;
-    background: #fc0909;
-    
+    background: #a58989;
     height:30px;
     width:30px;
-}
+}*/
 
-/* イケサキのモーダルウィンドウ画像サイズ */
-img.cook_pasta{
-    
-    height: 50%;
-    width:50%;
-}
-
-/* ヤミーのモーダルウィンドウ画像サイズ */
-img.yummy_pasta{
-    
-    height: 50%;
-    width:50%;
-}
-
-
-/* 投票ボタンのサイズとか */
-button.VoteComplete {
+@media (min-height: 790px) {
+  /* イケサキのモーダルウィンドウ画像サイズ */
+  img.cook_pasta{  
+    position: relative;
+    width:100%;
+    top: 20px;
+  }
+  /* ヤミーのモーダルウィンドウ画像サイズ */
+  img.yummy_pasta{
+    position: relative;
+    width:100%;
+    top: 20px;
+  }
+  /* 投票ボタンのサイズとか */
+  button.VoteComplete {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.5;
+    width: 100%;
+    border-radius: 25px;
     position: relative;
     display: inline-block;
     padding: 1rem 4rem;
@@ -53,24 +52,228 @@ button.VoteComplete {
     color: #212529;
     border-radius: 0.5rem;
   }
+  button.VoteComplete:before {
+    position: absolute;
+    top: 0;
+    left: calc(-120% + 50px);
   
-  /*投票ボタンデザイン*/
+    width: 150%;
+    height: 500%;
   
-  button.VoteComplete {
-    overflow: hidden;
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
   
-    padding: 1.5rem 6rem;
-  
-    color: #c8ff00;
-    border-radius: 0;
-    background: #000;
+    background: #A0C49D;
   }
   
-  button.VoteComplete span {
+  button.VoteComplete:after {
+    position: absolute;
+    top: -400%;
+    right: calc(-120% + 50px);
+  
+    width: 150%;
+    height: 500%;
+  
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+  
+    background: #E1ECC8;
+  }
+}
+@media (max-height: 789px) {
+  /* イケサキのモーダルウィンドウ画像サイズ */
+  img.cook_pasta{  
     position: relative;
-    z-index: 1;
+    width:90%;
+    top: 20px;
+    left: 12px;
+  }
+  /* ヤミーのモーダルウィンドウ画像サイズ */
+  img.yummy_pasta{
+    position: relative;
+    width:90%;
+    left: 12px;
+    top: 20px;
+  }
+  /* 投票ボタンのサイズとか */
+  button.VoteComplete {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    width: 90%;
+    left: 12px;
+    border-radius: 25px;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+  }
+  button.VoteComplete:before {
+    position: absolute;
+    top: 0;
+    left: calc(-130% + 50px);
+  
+    width: 150%;
+    height: 500%;
+  
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+  
+    background: #A0C49D;
   }
   
+  button.VoteComplete:after {
+    position: absolute;
+    top: -400%;
+    right: calc(-130% + 50px);
+  
+    width: 150%;
+    height: 500%;
+  
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+  
+    background: #E1ECC8;
+  }
+}
+@media (max-height: 729px) {
+  /* イケサキのモーダルウィンドウ画像サイズ */
+  img.cook_pasta{  
+    position: relative;
+    width:80%;
+    top: 40px;
+    left: 25px;
+  }
+  /* ヤミーのモーダルウィンドウ画像サイズ */
+  img.yummy_pasta{
+    position: relative;
+    width:80%;
+    left: 25px;
+    top: 40px;
+  }
+  /* 投票ボタンのサイズとか */
+  button.VoteComplete {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    width: 80%;
+    left: 25px;
+    border-radius: 25px;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+  }
+  button.VoteComplete:before {
+    position: absolute;
+    top: 0;
+    left: calc(-130% + 50px);
+  
+    width: 150%;
+    height: 500%;
+  
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+  
+    background: #A0C49D;
+  }
+  
+  button.VoteComplete:after {
+    position: absolute;
+    top: -400%;
+    right: calc(-130% + 50px);
+  
+    width: 150%;
+    height: 500%;
+  
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+  
+    background: #E1ECC8;
+  }
+}
+@media (max-height: 639px) {
+  /* イケサキのモーダルウィンドウ画像サイズ */
+  img.cook_pasta{  
+    position: relative;
+    width:70%;
+    top: 35px;
+    left: 40px;
+  }
+  /* ヤミーのモーダルウィンドウ画像サイズ */
+  img.yummy_pasta{
+    position: relative;
+    width:70%;
+    left: 40px;
+    top: 35px;
+  }
+  /* 投票ボタンのサイズとか */
+  button.VoteComplete {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    width: 70%;
+    left: 40px;
+    border-radius: 25px;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+  }
   button.VoteComplete:before {
     position: absolute;
     top: 0;
@@ -91,7 +294,7 @@ button.VoteComplete {
   button.VoteComplete:after {
     position: absolute;
     top: -400%;
-    right: calc(-150% + 50px);
+    right: calc(-140% + 50px);
   
     width: 150%;
     height: 500%;
@@ -104,6 +307,28 @@ button.VoteComplete {
   
     background: #E1ECC8;
   }
+}
+
+
+
+
+  /*投票ボタンデザイン*/
+  
+  button.VoteComplete {
+    overflow: hidden;
+  
+    padding: 1.5rem 6rem;
+  
+    color: #c8ff00;
+    border-radius: 0;
+    background: #000;
+  }
+  
+  button.VoteComplete span {
+    position: relative;
+    z-index: 1;
+  }
+
   
   button.VoteComplete:hover:before {
     -webkit-transform: rotate(45deg) translateX(0) translateY(-50%);
