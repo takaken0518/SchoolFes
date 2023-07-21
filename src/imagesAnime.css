@@ -1,5 +1,5 @@
 :root{
-	--images_width:25%;
+	--images_width:40%;
 	--images_height:100%;
 	--Votebutton_top:12px;
   --Cook_top:80px;
@@ -19,6 +19,24 @@ html {
   padding: 50px 20px;
 }
 
+.title {
+  position: relative;
+  top: 30px;
+  margin-left: 20px;
+}
+
+#title_text {
+  font-size: 30px;
+  color: white;
+  font-family: 'Monotype Corsiva';
+}
+
+#description_text {
+  font-size: 15px;
+  color: white;
+  font-family: 'Monotype Corsiva';
+}
+
 /*モーダルウィンドウ用の半透明のやつ*/
 #overlay{
 /*　画面全体を覆う設定　*/
@@ -28,6 +46,7 @@ html {
   width:100%;
   height:100%;
   background-color:rgba(0,0,0,0.5);
+  z-index: 10;
 
   /*　画面の中央に要素を表示させる設定　*/
   display: flex;
@@ -41,8 +60,8 @@ img.Cook{
 	position: relative;
 
 	top:var(--Cook_top);
-  left: 50px;
-
+  left: 20px;
+  
 }
 
 /*ヤミー山亀の表示位置指定*/
@@ -50,7 +69,7 @@ img.Yummy{
 	position: relative;
 
 	top:var(--Yummy_top);
-	left:130px;
+	left:50px;
 
 }
 
@@ -62,7 +81,7 @@ img.Yummy{
 	margin:auto;
 
   z-index: -50;
-
+  box-shadow: 0px 0px 9px 5px white;
 }
 
 /* 案内用テキストレイアウト */

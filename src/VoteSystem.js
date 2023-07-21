@@ -47,21 +47,28 @@ function VoteSystem() {
 
   return (
     <div className="votesystem-container">
-      <img
-        src="images/Cook.png"
-        alt="Image 1"
-        className="vote-image Cook"
-        onClick={() => handleImageSelect('image1')}
-      />
-      {console.log('イケザキ投票数' + votes.image1)}
+      <div class="title"> 
+        <p id="title_text">Vote / 投票</p>
+        <p id="description_text">貴方が美味しいと思った料理人に投票を...</p>
+      </div>
+      <div class="modal_button">
+        <img
+          src="images/Cook.png"
+          alt="Image 1"
+          className="vote-image Cook"
+          onClick={() => {handleImageSelect('image1');postJson(1)}}
+        />
+        {console.log('イケザキ投票数' + votes.image1)}
 
-      <img
-        src="images/Yummy.png"
-        alt="Image 2"
-        className="vote-image Yummy"
-        onClick={() => handleImageSelect('image2')}
-      />
-      {console.log('Yummy投票数' + votes.image2)}
+        <img
+          src="images/Yummy.png"
+          alt="Image 2"
+          className="vote-image Yummy"
+          onClick={() => {handleImageSelect('image2');postJson(0);}}
+        />
+        {console.log('Yummy投票数' + votes.image2)}
+      </div>
+      
 
       <p></p>
 
@@ -73,9 +80,35 @@ function VoteSystem() {
           handleCloseModal={handleCloseModal}
         />
       )}
-      <p className="Vote_info">投票したい方の画像をタップ！！</p>
+      <p className="Vote_info">投票したい方の画像をタップ！！
+        <br/>
+        ※投票は1度だけになります
+      </p>
     </div>
   );
+}
+
+async function postJson(num) {
+  let text = String(num);
+  const url = 'https://script.google.com/macros/s/AKfycbyGArLU5iNDLTkp7wOKPxeGiQpvQCq_xk4x3yLRnmaLdOlzQ1nzp345rx6YtxNp_lP8JQ/exec?select=' + text;
+  console.log("start");
+      const response = await fetch(url, {
+          //method: 'POST',
+          mode: 'cors',
+        
+          //body: data
+      }).then((response) => {
+          if(!response.ok) {
+              console.log('error!');
+          } 
+          console.log('ok!');
+          return response.json();
+      }).then((data)  => {
+          console.log(data);
+      }).catch((error) => {
+          console.log(error);
+      });
+  console.log("end");
 }
 
 export default VoteSystem;

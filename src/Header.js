@@ -8,7 +8,7 @@ import Animetion from './Animetion.css';
 const Header = () => {
   return (
     <div>
-    <header class="fadeLeft">
+    <nav class="fadeLeft">
     <h1>
       <font color="b1dedb">Yama</font>
       <font color="7dfaca">Ga</font>
@@ -17,7 +17,7 @@ const Header = () => {
     </h1>
     <HamburgerMenu/>
 
-    </header>
+    </nav>
 
     </div>
   )

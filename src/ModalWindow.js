@@ -15,7 +15,7 @@ const ModalWindow = ({ selectedImage, votes, handleVote, handleCloseModal }) => 
         <div id="overlay">
           <div id="content">
             <p>
-              <button className='closebutton' onClick={handleCloseModal}>close</button>
+              <button className='closebutton' onClick={handleCloseModal}>&times;</button>
             </p>
             <p><img src='images/Cook.png' className='cook_pasta'></img></p>
 
@@ -35,7 +35,7 @@ const ModalWindow = ({ selectedImage, votes, handleVote, handleCloseModal }) => 
         <div id="overlay">
           <div id="content">
             <p>
-              <button className='closebutton' onClick={handleCloseModal}>close</button>
+              <button className='closebutton' onClick={handleCloseModal}>&times;</button>
             </p>
             <p><img src='images/Yummy.png' className='yummy_pasta'></img></p>
             <p>Votes: {votes[selectedImage]}</p>
