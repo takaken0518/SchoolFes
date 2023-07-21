@@ -1,9 +1,14 @@
 /* top画面のスタイル */
 
+/* h1のスタイル */
+h1.toptext{
+    margin-top:50px;
+    color: rgb(215, 236, 255);
+}
 
 /* 店舗場所画像のスタイル */
 img.map{
-    position: absolute;
+    position: relative;
     top: 10%;
     left: 2%;
   

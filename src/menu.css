@@ -2,10 +2,12 @@
 /* 画像がimg要素にフィットするように設定 */
 .img-container {
   position: absolute;
-  left: -7%;
+  margin-left: 3%;
+  margin-right: 3%;
+  
 
   max-width: 500px;
-  width: 100vw; /* 画面幅いっぱいに設定 */
+  width: 95vw; /* 画面幅いっぱいに設定 */
   height: auto;
 
   z-index: -50;
