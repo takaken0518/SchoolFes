@@ -35,7 +35,7 @@
 .hamburger:active:before {
   background-color: #8de95579;
 }
-
+/**/
 .hamburger span {
   position: absolute;
   width: 100%;
