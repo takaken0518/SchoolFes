@@ -62,7 +62,7 @@
     
     .fadeLeft{
     animation-name:fadeLeftAnime;
-    animation-duration:2.0s;
+    animation-duration:1.8s;
     animation-fill-mode:forwards;
     opacity:0;
     }

@@ -77,8 +77,9 @@
   display: none;
   top: 100%;
   left: 0;
-  width: 60px;
-  background-color: #d1d1d1;
+  width: 100%;
+  background-color: #333333dc;
+  opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 10;
 }
@@ -106,7 +107,8 @@
   display: block;
 }
 
-/* 開いてあるページ用レイアウト */
-.hamburger-menu .menu ul li.active {
-  color:chartreuse; /* 選択中のテキストカラーを変更 */
+/* 開いているリンクのスタイル */
+.hamburger-menu .menu ul li a.active {
+  color: rgb(149, 152, 146); /* 選択中のテキストカラーを変更 */
 }
+
